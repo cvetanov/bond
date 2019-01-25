@@ -1,5 +1,4 @@
-// extension DOM
-// const changeColor = document.getElementById('changeColor');
+const apiKey = 'b9844c9b';
 
 // Inject the payload.js script into the current tab after the popout has loaded
 window.addEventListener('load', function(evt) {
@@ -10,11 +9,11 @@ window.addEventListener('load', function(evt) {
 
 // Listen to messages from the payload.js script and write to popout.html
 chrome.runtime.onMessage.addListener(function(title) {
-  fetch(`https://www.omdbapi.com/?s=${title}&apikey=b9844c9b`)
+  fetch(`https://www.omdbapi.com/?s=${title}&apikey=${apiKey}`)
     .then((response) => response.json())
     .then(({ Search }) => {
       const { imdbID } = Search[0];
-      const detailsUrl = `https://www.omdbapi.com/?i=${imdbID}&apikey=b9844c9b`;
+      const detailsUrl = `https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`;
       fetch(detailsUrl)
         .then((response) => response.json())
         .then((result) => {
