@@ -1,4 +1,3 @@
-// send the page title as a chrome message
 var title = document.title;
 var netflixIndex = title.indexOf(' | Netflix Official Site');
 if (netflixIndex !== -1) {

@@ -1,13 +1,11 @@
 const apiKey = 'b9844c9b';
 
-// Inject the payload.js script into the current tab after the popout has loaded
 window.addEventListener('load', () => {
   chrome.extension.getBackgroundPage().chrome.tabs.executeScript(null, {
     file: 'dom.js',
   });
 });
 
-// Listen to messages from the payload.js script and write to popout.html
 chrome.runtime.onMessage.addListener((title) => {
   fetch(`https://www.omdbapi.com/?s=${title}&apikey=${apiKey}`)
     .then((response) => response.json())
