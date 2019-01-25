@@ -27,6 +27,10 @@ chrome.runtime.onMessage.addListener(function(title) {
           } from ${result.imdbVotes}`;
           document.getElementById('Poster').src = result.Poster;
         });
+    })
+    .catch(() => {
+      document.getElementById('Title').innerHTML =
+        'Error occurred, no data available';
     });
 });
 
