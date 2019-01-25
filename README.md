@@ -15,3 +15,9 @@ The api key used for calling the OMDB API is limited to 1000 requests per day, s
 Open a movie on HBO and click the extension in your browser.
 
 ![Screenshot](/screenshot.png 'Screenshot')
+
+#
+
+#### Disclaimer
+
+This extension is built for personal use and might break with a change in HBO's website.
